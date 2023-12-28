@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: azure;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 30px;
+}
+
+:root {
+  --baseColor: rgb(10, 88, 114);
+  --baseBg: rgb(59, 158, 190);
+}
+
+.main-container {
+  padding: 10px;
+  background-color: var(--baseBg);
+  color: var(--baseColor);
+}
