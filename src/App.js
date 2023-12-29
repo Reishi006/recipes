@@ -20,13 +20,25 @@ function Searchbar() {
     setText(e.target.value);
   }
 
+  /* let typeTimer;
+
+  const handleShow = () => {
+    (text !== '') ? setShow(true) : setShow(false)
+    console.log('show handled')
+  }
+
+  const handleKeyUp = () => {
+    clearTimeout(typeTimer)
+
+    typeTimer = setTimeout(handleShow(), 500)
+    console.log('key up');
+  } */
+
   return(
     <>
       <div className='searchbar'>
-        <h5>Please enter your desired dish below:</h5>
+        <h6>Please enter your desired dish below:</h6>
         <input type="text" className='searchinput' onChange={handleText}></input>
-        <h6>You searched for:</h6>
-        <div>{text}</div>
       </div>
       <Queries text={text}></Queries>
     </>
@@ -39,8 +51,23 @@ function Queries({text}) {
   let random = Math.floor(Math.random() * 3) + 1;
 
   useEffect (() => {
-    (text !== '') ? setShow(true) : setShow(false);
-    console.log(text);
+
+    /* const handleShow = () => {
+      (text !== '') ? setShow(true) : setShow(false);
+      console.log(text);
+    } */
+  
+    console.log('key up');
+
+    let typeTimer;
+    
+    clearTimeout(typeTimer);
+    setShow(false);
+
+    typeTimer = setTimeout(() => {
+      (text !== '') ? setShow(true) : setShow(false);
+      console.log(text);
+    }, 800)
   }, [text, setShow])
 
   const rec = [
@@ -71,8 +98,23 @@ function Queries({text}) {
 
   return (
     (show) ?
-    <div className='queries'>{recipeEl}</div>
-    : ''
+    <>
+      <div className='query'>
+        <h6>You searched for:</h6>
+        <b><div>{text}</div></b>
+      </div>
+      <div className='queries'>
+        {recipeEl}
+      </div>
+    </>
+    : 
+      (text !== '') ? 
+      <div className='loading'>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      : '' /* else if? */
   );
 }
 
