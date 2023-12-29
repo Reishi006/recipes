@@ -20,25 +20,16 @@ function Searchbar() {
     setText(e.target.value);
   }
 
-  /* let typeTimer;
-
-  const handleShow = () => {
-    (text !== '') ? setShow(true) : setShow(false)
-    console.log('show handled')
-  }
-
-  const handleKeyUp = () => {
-    clearTimeout(typeTimer)
-
-    typeTimer = setTimeout(handleShow(), 500)
-    console.log('key up');
-  } */
-
   return(
     <>
       <div className='searchbar'>
         <h6>Please enter your desired dish below:</h6>
-        <input type="text" className='searchinput' onChange={handleText}></input>
+        <input 
+          type="text" 
+          className='searchinput' 
+          onChange={handleText} 
+          maxlength="100"
+        ></input>
       </div>
       <Queries text={text}></Queries>
     </>
@@ -51,12 +42,6 @@ function Queries({text}) {
   let random = Math.floor(Math.random() * 3) + 1;
 
   useEffect (() => {
-
-    /* const handleShow = () => {
-      (text !== '') ? setShow(true) : setShow(false);
-      console.log(text);
-    } */
-  
     console.log('key up');
 
     let typeTimer;
@@ -74,17 +59,20 @@ function Queries({text}) {
     {
       id: 1,
       title: '1.',
-      desc: 'First description.'
+      desc: 'First description.',
+      rating: 2.3
     },
     {
       id: 2,
       title: '2.',
-      desc: 'Second description.'
+      desc: 'Second description.',
+      rating: 9.1
     },
     {
       id: 3,
       title: '3.',
-      desc: 'Third (last) description.'
+      desc: 'Third (last) description.',
+      rating: 5.6
     }
   ];
   
@@ -93,6 +81,7 @@ function Queries({text}) {
       <img src={Placeholder} alt='placeholder'/>
       <p><b>{r.title}{text}</b></p>
       <p>{r.desc}</p>
+      <div className='rating-container'>Rating:<div className='max-rating'><div className='rating' style={{width: (r.rating*100)/10 + '%'}}></div></div>{r.rating}/10</div>
     </div>
   ));
 
