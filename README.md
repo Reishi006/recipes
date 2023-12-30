@@ -1,2 +1,0 @@
-# recipes
-Reactjs recipes app
