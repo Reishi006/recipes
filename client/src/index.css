@@ -28,7 +28,7 @@ input:focus {
 }
 
 input::placeholder {
-  color: rgb(173, 173, 173);
+  color: rgb(125, 174, 190);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -144,6 +144,19 @@ img {
   background-color: rgb(177, 223, 236);
   border-radius: 5px;
   overflow-wrap: break-word;
+  animation: recipe 0.2s ease-out;
+  animation-iteration-count: 1;
+}
+
+@keyframes recipe {
+  0% {margin-top: 2.5em}
+  100% {margin-top: 1em;}
+}
+
+.recipe:hover {
+  box-shadow: 0px 0px 15px rgba(121, 205, 228, 0.5);
+  transform: scale(105%);
+  transition: 0.3s;
 }
 
 .recipe > p {
