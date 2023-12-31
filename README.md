@@ -1,3 +1,3 @@
 ### Recipe App
 
-Reactjs recipe app with nodejs mysql module database communication
+Reactjs recipe app with nodejs mysql package database communication
