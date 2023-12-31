@@ -28,7 +28,7 @@ function Searchbar() {
         <input 
           type="text" 
           className='searchinput'
-          placeholder='For tag names add space for each'
+          placeholder='Add space for each tag name'
           onChange={handleText} 
           maxLength="100"
         ></input>
@@ -105,8 +105,7 @@ function Queries({text}) {
     (show) ?
     <>
       <div className='query'>
-        <h6>You searched for:</h6>
-        <b><div>{text}</div></b>
+        <b>{(recipeEl.length < 1) ? <div>Found nothing</div> : <><h6>You searched for:</h6><div>{text}</div></>}</b>
       </div>
       <div className='queries'>
         {recipeEl}
