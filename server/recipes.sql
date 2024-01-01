@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2023 at 03:55 PM
+-- Generation Time: Jan 01, 2024 at 05:37 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,7 +41,8 @@ CREATE TABLE `recipe` (
 INSERT INTO `recipe` (`id`, `title`, `rec_desc`, `rating`) VALUES
 (1, 'Miso soup', 'Miso soup is a traditional Japanese soup that starts with a dashi stock and is flavored with miso paste.', 7.8),
 (2, 'Pancakes', 'Perfect pancakes are easier to make than you think. This pancake recipe produces thick, fluffy, and all-around delicious pancakes with just a few ingredients that are probably already in your kitchen.', 9.3),
-(3, 'Ramen', 'In a medium saucepan combine broth and noodles. Cover and bring to a boil over high heat; stir to break up noodles. Reduce heat to medium and add soy sauce, chili oil and ginger. Simmer, uncovered, for 10 minutes. Stir in sesame oil and garnish with green onions.', 8.5);
+(3, 'Ramen', 'In a medium saucepan combine broth and noodles. Cover and bring to a boil over high heat; stir to break up noodles. Reduce heat to medium and add soy sauce, chili oil and ginger. Simmer, uncovered, for 10 minutes. Stir in sesame oil and garnish with green onions.', 8.5),
+(4, 'Grilled Chicken Caprese Sandwich', 'When summer comes along, you will find me blasting the AC and avoiding the stove and oven at all costs. I turn to recipes that come together easily on the grill and utilize fresh seasonal ingredients, and this sandwich does just that. ', 8.1);
 
 -- --------------------------------------------------------
 
@@ -64,7 +65,9 @@ INSERT INTO `recipe_tags` (`id`, `recipe_id`, `tags_id`) VALUES
 (2, 1, 3),
 (3, 2, 4),
 (4, 3, 1),
-(5, 3, 3);
+(5, 3, 3),
+(6, 4, 12),
+(7, 4, 14);
 
 -- --------------------------------------------------------
 
@@ -85,7 +88,17 @@ INSERT INTO `tags` (`id`, `name`) VALUES
 (1, 'ramen'),
 (2, 'miso'),
 (3, 'soup'),
-(4, 'pancake');
+(4, 'pancake'),
+(5, 'pizza'),
+(6, 'spaghetti'),
+(7, 'curry'),
+(8, 'salad'),
+(9, 'toast'),
+(10, 'rice'),
+(11, 'wrap'),
+(12, 'sandwich'),
+(13, 'sushi'),
+(14, 'cutlet');
 
 --
 -- Indexes for dumped tables
@@ -119,19 +132,19 @@ ALTER TABLE `tags`
 -- AUTO_INCREMENT for table `recipe`
 --
 ALTER TABLE `recipe`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `recipe_tags`
 --
 ALTER TABLE `recipe_tags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tags`
 --
 ALTER TABLE `tags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables
